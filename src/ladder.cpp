@@ -78,7 +78,7 @@ void load_words(std::set<std::string> & word_list, const std::string & file_name
 
 void print_word_ladder(const std::vector<std::string> & ladder) {
     if (ladder.empty()) {
-        std::cerr << "No ladder found" << std::endl;
+        std::cerr << "No ladder found.\n";
         return;
     }
 

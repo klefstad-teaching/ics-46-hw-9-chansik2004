@@ -58,8 +58,8 @@ std::vector<int> extract_shortest_path(const std::vector<int> & distances, const
 }
 
 void print_path(const std::vector<int> & v, int total) {
-    if (v.empty() || v.front() == -1) {
-        std::cout << "No path found" << std::endl;
+    if (total == INF) {
+        std::cout << "No path found\n"
         return;
     }
 
@@ -69,5 +69,5 @@ void print_path(const std::vector<int> & v, int total) {
             std::cout << " ";
         }
     }
-    std::cout << "\nTotal cost is " << total << std::endl;
+    std::cout << "\nTotal cost is " << total << "\n";
 }
