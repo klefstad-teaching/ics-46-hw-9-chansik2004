@@ -63,3 +63,15 @@ std::vector<std::string> generate_word_ladder(const std::string & begin_word, co
     error(begin_word, end_word, "No ladder found");
     return {};
 }
+
+void load_words(std::set<std::string> & word_list, const std::string & file_name) {
+    std::ifstream in(file_name);
+    if (!in) {
+        std::cerr << "Error: Unable to open " << file_name << std::endl;
+        exit(1);
+    }
+    std::string word;
+    while (in >> word) {
+        word_list.insert(word);
+    }
+}
