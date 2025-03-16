@@ -42,3 +42,12 @@ std::vector<int> dijkstra_shortest_path(const Graph & G, int source, std::vector
     }
     return distance;
 }
+
+std::vector<int> extract_shortest_path(const std::vector<int> & previous, int destination) {
+    std::vector<int> shortestPath;
+    for (int curr = destination; curr != -1; curr = previous[curr]) {
+        shortestPath.push_back(curr);
+    }
+    std::reverse(shortestPath.begin(), shortestPath.end());
+    return shortestPath;
+}
