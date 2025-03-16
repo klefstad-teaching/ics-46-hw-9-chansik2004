@@ -2,7 +2,7 @@
 
 int main() {
     std::set<std::string> word_list;
-    load_words(word_list, "words.txt");
+    load_words(word_list, "src/words.txt");
 
     std::string begin_word, end_word;
     std::cout << "Enter the start word: ";
