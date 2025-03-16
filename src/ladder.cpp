@@ -48,6 +48,7 @@ std::vector<std::string> generate_word_ladder(const std::string & begin_word, co
 
         for (const std::string & word : word_list) {
             if (is_adjacent(last_word, word) && visited.find(word) == visited.end()) {
+                visited.insert(word);
                 std::vector<std::string> new_ladder = ladder;
                 new_ladder.push_back(word);
 
@@ -55,7 +56,6 @@ std::vector<std::string> generate_word_ladder(const std::string & begin_word, co
                     return new_ladder;
                 }
 
-                visited.insert(word);
                 ladder_queue.push(new_ladder);
             }
         }
@@ -68,7 +68,7 @@ void load_words(std::set<std::string> & word_list, const std::string & file_name
     std::ifstream in(file_name);
     if (!in) {
         std::cerr << "Error: Unable to open " << file_name << std::endl;
-        exit(1);
+        return;
     }
     std::string word;
     while (in >> word) {
