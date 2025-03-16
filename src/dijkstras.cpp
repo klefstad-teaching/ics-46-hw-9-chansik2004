@@ -63,8 +63,10 @@ void print_path(const std::vector<int> & v, int total) {
         return;
     }
 
-    for (size_t i = 0; i < v.size(); ++i) {
-        std::cout << v[i] << " ";
+    if (!v.empty()) {
+        for (size_t i = 0; i < v.size(); ++i) {
+            std::cout << v[i] << " ";
+        }
     }
     std::cout << "\nTotal cost is " << total << "\n";
 }
