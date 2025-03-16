@@ -75,3 +75,17 @@ void load_words(std::set<std::string> & word_list, const std::string & file_name
         word_list.insert(word);
     }
 }
+
+void print_word_ladder(const std::vector<std::string> & ladder) {
+    if (ladder.empty()) {
+        std::cerr << "Error: No ladder found" << std::endl;
+        return;
+    }
+    for (size_t i = 0; i < ladder.size(); ++i) {
+        std::cout << ladder[i];
+        if (i != ladder.size() - 1) {
+            std::cout << " -> ";
+        }
+    }
+    std::cout << std::endl;
+}
