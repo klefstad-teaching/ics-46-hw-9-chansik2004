@@ -13,7 +13,7 @@ int main(int argc, char * argv[]) {
     std::vector<int> distance = dijkstra_shortest_path(G, 0, previous);
 
     for (int i = 0; i < G.numVertices; ++i) {
-        std::vector<int> shortestPath = extract_shortest_path(previous, i);
+        std::vector<int> shortestPath = extract_shortest_path(distance, previous, i);
         print_path(shortestPath, distance[i]);
     }
 }

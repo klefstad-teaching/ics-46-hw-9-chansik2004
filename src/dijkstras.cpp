@@ -43,8 +43,13 @@ std::vector<int> dijkstra_shortest_path(const Graph & G, int source, std::vector
     return distance;
 }
 
-std::vector<int> extract_shortest_path(const std::vector<int> & previous, int destination) {
+std::vector<int> extract_shortest_path(const std::vector<int> & distances, const std::vector<int> & previous, int destination) {
     std::vector<int> shortestPath;
+
+    if (distances[destination == INF]) {
+        return shortestPath;
+    }
+
     for (int curr = destination; curr != -1; curr = previous[curr]) {
         shortestPath.push_back(curr);
     }
