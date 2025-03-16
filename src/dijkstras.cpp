@@ -59,7 +59,7 @@ std::vector<int> extract_shortest_path(const std::vector<int> & distances, const
 
 void print_path(const std::vector<int> & v, int total) {
     if (total == INF) {
-        std::cout << "No path found\n"
+        std::cout << "No path found\n";
         return;
     }
 
