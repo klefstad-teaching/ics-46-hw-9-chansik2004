@@ -90,6 +90,7 @@ void print_word_ladder(const std::vector<std::string> & ladder) {
     std::cout << std::endl;
 }
 
+#define my_assert(e) {cout << #e << ((e) ? " passed": " failed") << endl;}
 void verify_word_ladder() {
     std::set<std::string> word_list;
     load_words(word_list, "words.txt");

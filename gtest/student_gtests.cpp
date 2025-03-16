@@ -49,6 +49,6 @@ TEST(DijkstraTests, NoPathExists) {
 
 TEST(DijkstraTests, PathExtraction) {
   std::vector<int> previous = {-1, 0, 2, 1};
-  std::vector<int> expected = {0, 2, 1, 3};
+  std::vector<int> expected = {0, 1, 3};
   EXPECT_EQ(extract_shortest_path(previous, 3), expected);
 }
