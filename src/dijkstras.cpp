@@ -51,3 +51,18 @@ std::vector<int> extract_shortest_path(const std::vector<int> & previous, int de
     std::reverse(shortestPath.begin(), shortestPath.end());
     return shortestPath;
 }
+
+void print_path(const std::vector<int> & v, int total) {
+    if (v.empty() || v.front() == -1) {
+        std::cout << "No path found" << std::endl;
+        return;
+    }
+
+    for (size_t i = 0; i < v.size(); ++i) {
+        std::cout << v[i];
+        if (i != v.size() - 1) {
+            std::cout << " ";
+        }
+    }
+    std::cout << "\nTotal cost is " << total << std::endl;
+}
